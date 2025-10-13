@@ -100,6 +100,30 @@ body{
   margin: 0 auto;
 }
 
+.wrapper-full{
+  max-width: 1262px;
+  margin: 0 auto;
+}
+
+.section-title{
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 42px;
+  position: relative;
+  padding-bottom: 10px; /* 7 пикселей отступ + 3 пикселя толщина нашего псевдо элемента (полосочка)*/
+}
+
+.section-title::after{
+  display: block;
+  content: '';
+  width: 253px;
+  height: 3px;
+  background-color: #006DFE;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 /* Header styles start */
 
 .header {
@@ -146,6 +170,7 @@ body{
   background: url(../img/intro-bg.jpg) no-repeat center;
   background-size: cover;
   padding-top: 263px;
+  padding-bottom: 223px;
 }
 .intro__title{
   max-width: 619px; /* ограничиваем, чтобы перенести на вторую строчку*/
@@ -284,8 +309,115 @@ body{
   background: url(../img/svg/arrow-right-icon.svg) no-repeat right center;
 }
 
-/* Benefits styles ens */
+/* Benefits styles end */
 
 
+
+/* Places styles start */
+
+.places{
+  margin-bottom: 131px;
+}
+
+.places__caption{
+  display: flex;
+  flex-wrap: wrap; /*для безопасности*/
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.places__title{
+  margin-right: 15px; /*на случай, когда элементы сблизятся, чтобы между ними оставался какой то отступ*/
+}
+
+.places__view-all{
+  font-size: 16px;
+  color: #006DFE;
+  text-decoration: none;
+  padding-right: 59px;
+  background: url(../img/svg/arrow-right-icon.svg) no-repeat right center;
+}
+
+.places__view-all:hover, .places__view-all:focus{
+  opacity: .65;
+}
+
+.places__cards{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px; /* отступы*/
+}
+
+.places__card{
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  unicode-bidi: isolate;
+  position: relative;
+  overflow: hidden;
+}
+
+.places__card::after{
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: rgba(21, 24, 36, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.places__card:hover .places__card-pic{
+  transform: scale(1.05);
+
+}
+
+.places__card-title{
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 100%;
+  color: white;
+  position: absolute;
+  bottom: 27px;
+  left: 29px;
+  z-index: 3;
+}
+
+.places__card_size_lg{
+  grid-column: span 3;
+}
+
+.places__card_size_sm{
+  grid-column: span 2;
+}
+
+.places__card-pic{
+  width: 100%;
+  transition: .15s all;
+}
+
+.places__card-pic_size_lg{
+  height: 354px;
+  object-fit: cover;
+}
+
+.places__card-pic_size_sm{
+  height: 283px;
+  object-fit: cover;
+}
+
+.places__card-link{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+/* Places styles end */
 
 
